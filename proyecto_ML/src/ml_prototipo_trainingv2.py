@@ -7,12 +7,14 @@ from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 
 
-df = pd.read_excel("C:/Users/emman/Downloads/database_v1.1.xlsx")
+#df = pd.read_excel("C:/Users/emman/Downloads/database_v1.1.xlsx")
+df = pd.read_excel("C:/Users/emman/Downloads/database_v2.0.xlsx")
 
 print("Primeras filas del dataset:")
 print(df.head())
 
-X = df.drop(["user_id", "activity_level"], axis=1).astype(float)
+#X = df.drop(["user_id", "activity_level"], axis=1).astype(float)
+X = df.drop(["user_id", "activity_level", "activity_numeric" ], axis=1).astype(float)
 
 y = df["activity_level"].map({
     "low": 0,
